@@ -9,7 +9,7 @@ body{
     width: 100%;
     font: Arial, Verdana, Arial, Helvetica, sans-serif;
     background: url(https://images.cnblogs.com/cnblogs_com/Yuuuu/1953365/o_210327083119background.png) no-repeat ;
-    background-size: contain;
+    background-size: cover;
 }
 #container{
     margin: 0 auto;
@@ -41,4 +41,30 @@ h3{
 }
 #app{
     height: 800px;
+}
+#main{
+    width: 80%;
+    margin: 40px auto;
+    height: auto;
+}
+.form-control{
+    width: 200px;
+    display: inline;
+}
+#msg_form{
+    margin: 20px 20px 0px 20px;
+    
+}
+#msg_content{
+    width: 80%;
+    margin-left: 55px;
+}
+label{
+    margin: 10px 10px 10px 60px;
+}
+#msg_title{
+    margin-left: 55px;
+}
+.modal-title{
+    text-align: center;
 }
