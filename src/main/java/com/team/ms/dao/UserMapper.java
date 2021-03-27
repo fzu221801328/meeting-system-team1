@@ -8,11 +8,14 @@ import java.util.List;
 
 @Mapper
 @Repository
-public interface UserMapper {
+public interface UserMapper
+{
     void insertUser(User user);
     void updateUser(User user);
     List<User> selectUsers();
     User selectUserById(String uid);
     void deleteUser(String uid);
-
+    boolean isUsernameExist(String username);
+    boolean isEmailExist(String email);
+    boolean isPhoneExist(String phone);
 }

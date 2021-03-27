@@ -1,5 +1,5 @@
 package com.team.ms.pojo;
-import com.team.ms.pojo.Forum;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -48,13 +48,13 @@ public class User
   @Override
   public String toString() {
     return "User{" +
-            "uid='" + uid + '\'' +
-            ", username='" + username + '\'' +
-            ", email='" + email + '\'' +
-            ", phone='" + phone + '\'' +
-            ", realname='" + realname + '\'' +
-            ", password='" + password + '\'' +
-            ", forums=" + forums +
-            '}';
+        "uid='" + uid + '\'' +
+        ", username='" + username + '\'' +
+        ", email='" + email + '\'' +
+        ", phone='" + phone + '\'' +
+        ", realname='" + realname + '\'' +
+        ", password='" + password + '\'' +
+        ", forums=" + forums +
+        '}';
   }
 }

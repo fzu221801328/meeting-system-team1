@@ -2,13 +2,13 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper>
+<mapper namespace="com.team.ms.dao.UserMapper">
     <insert id="insertUser" parameterType="User">
-        insert into user(uid,username,email,phone,realname,password)
+        insert into `user`(uid,username,email,phone,realname,password)
         values (#{uid},#{username},#{email},#{phone},#{realname},#{password})
     </insert>
     <update id="updateUser" parameterType="User">
-        update from user
+        update from `user`
         set username=#{username},
         email=#{email},
         phone=#{phone},
@@ -22,7 +22,7 @@
         f.fid fid,f.forumname forumname,f.cid cid,
         f.holdtime holdtime,f.location location,
         f.subject subject,f.introduction introduction
-        from user u
+        from `user` u
         left join fu fu on u.uid=fu.uid
         left join forum f on fu.fid=f.fid
     </select>
@@ -32,15 +32,32 @@
         f.fid fid,f.forumname forumname,f.cid cid,
         f.holdtime holdtime,f.location location,
         f.subject subject,f.introduction introduction
-        from user u
+        from `user` u
         left join fu fu on u.uid=fu.uid
         left join forum f on fu.fid=f.fid
         where u.uid=#{uid}
     </select>
-    <delete id="deleteUserById">
-        delete from user where uid=#{uid}
+    <delete id="deleteUser">
+        delete from `user` where uid=#{uid}
     </delete>
-    <resultMap id="user" type="UserMap">
+
+    <!--判断用户名是否存在-->
+    <select id="isUsernameExist"  resultType="java.lang.Boolean">
+        <![CDATA[ select count(uid) from `user`where username=#{username} ]]>
+    </select>
+
+    <!--判断邮箱是否存在-->
+    <select id="isEmailExist"  resultType="java.lang.Boolean">
+        <![CDATA[ select count(uid) from `user`where email=#{email} ]]>
+    </select>
+
+    <!--判断手机号是否存在-->
+    <select id="isPhoneExist"  resultType="java.lang.Boolean">
+        <![CDATA[ select count(uid) from `user`where phone=#{phone} ]]>
+    </select>
+
+
+    <resultMap id="UserMap" type="com.team.ms.pojo.User">
         <result property="uid" column="uid"/>
         <result property="username" column="username"/>
         <result property="email" column="email"/>
