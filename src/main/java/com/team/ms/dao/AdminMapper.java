@@ -11,6 +11,7 @@ import java.util.Map;
 @Repository
 public interface AdminMapper
 {
+
   void insertAdmin(Admin admin);
 
   void deleteAdminById(String aid);
