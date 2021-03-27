@@ -9,10 +9,10 @@ import java.util.List;
 @Mapper
 @Repository
 public interface UserMapper {
-    public void insertUser(User user);
-    public void updateUser(User user);
-    public List<User> selectUsers();
-    public User selectUserById(String uid);
-    public void deleteUser(String uid);
+    void insertUser(User user);
+    void updateUser(User user);
+    List<User> selectUsers();
+    User selectUserById(String uid);
+    void deleteUser(String uid);
 
 }

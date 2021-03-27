@@ -1,9 +1,10 @@
 package com.team.ms.pojo;
-
+import com.team.ms.pojo.Forum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -22,6 +23,8 @@ public class User
   private String realname;  //真实姓名
 
   private String password;  //密码
+
+  private List<Forum> forums;   //用户关注的分论坛
 
   /**
    * 生成新对象
@@ -43,15 +46,15 @@ public class User
   }
 
   @Override
-  public String toString()
-  {
+  public String toString() {
     return "User{" +
-        "uid='" + uid + '\'' +
-        ", username='" + username + '\'' +
-        ", email='" + email + '\'' +
-        ", phone='" + phone + '\'' +
-        ", realname='" + realname + '\'' +
-        ", password='" + password + '\'' +
-        '}';
+            "uid='" + uid + '\'' +
+            ", username='" + username + '\'' +
+            ", email='" + email + '\'' +
+            ", phone='" + phone + '\'' +
+            ", realname='" + realname + '\'' +
+            ", password='" + password + '\'' +
+            ", forums=" + forums +
+            '}';
   }
 }

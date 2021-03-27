@@ -16,13 +16,45 @@
         password=#{password}
         where uid=#{uid}
     </update>
-    <select id="selectUsers" resultType="User">
-        select * from user
+    <select id="selectUsers" resultMap="UserMap">
+        select u.id uid,u.username username,u.email email,u.phone phone
+        u.realname realname,u.password password,
+        f.fid fid,f.forumname forumname,f.cid cid,
+        f.holdtime holdtime,f.location location,
+        f.subject subject,f.introduction introduction
+        from user u
+        left join fu fu on u.uid=fu.uid
+        left join forum f on fu.fid=f.fid
     </select>
-    <select id="selectUserById" resultType="User">
-        select * from user where uid=#{uid}
+    <select id="selectUserById" resultMap="UserMap">
+        select u.id uid,u.username username,u.email email,u.phone phone
+        u.realname realname,u.password password,
+        f.fid fid,f.forumname forumname,f.cid cid,
+        f.holdtime holdtime,f.location location,
+        f.subject subject,f.introduction introduction
+        from user u
+        left join fu fu on u.uid=fu.uid
+        left join forum f on fu.fid=f.fid
+        where u.uid=#{uid}
     </select>
     <delete id="deleteUserById">
         delete from user where uid=#{uid}
     </delete>
+    <resultMap id="user" type="UserMap">
+        <result property="uid" column="uid"/>
+        <result property="username" column="username"/>
+        <result property="email" column="email"/>
+        <result property="phone" column="phone"/>
+        <result property="realname" column="realname"/>
+        <result property="password" column="password"/>
+        <collection property="forums" ofType="Forum">
+            <result property="fid" column="fid"/>
+            <result property="forumname" column="forumname"/>
+            <result property="cid" column="cid"/>
+            <result property="holdtime" column="holdtime"/>
+            <result property="location" column="location"/>
+            <result property="subject" column="subject"/>
+            <result property="introduction" column="introduction"/>
+        </collection>
+    </resultMap>
 </mapper>
