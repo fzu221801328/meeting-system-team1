@@ -9,7 +9,4 @@ import java.util.Map;
 @Repository
 public interface AdminMapper {
 
-    //添加分论坛主席
-    public void addSubForumChairman(Map<String,String> map);
-    
 }
