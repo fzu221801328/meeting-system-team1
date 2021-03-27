@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.clear {
+    clear: both;
+}
+body{
+    width: 100%;
+    font: Arial, Verdana, Arial, Helvetica, sans-serif;
+    background: url(https://images.cnblogs.com/cnblogs_com/Yuuuu/1953365/o_210327083119background.png) no-repeat ;
+    background-size: contain;
+}
+#container{
+    margin: 0 auto;
+}
+#top {
+    height: 60px;
+    background-color: rgba(240, 248, 255, 0);
+}
+nav{
+    width: 80%;
+    margin: 0 auto;
+}
+img{
+    width: 40px;
+    margin-top: 10px;
+}
+h3{
+    margin-left: 20px;
+    float: right;
+    font-weight: bold;  
+    color: rgb(87, 116, 197);
+}
+#toplogo {
+    float: left;
+}
+#menu {
+    float: right;
+    margin-top: 10px;
+}
+#app{
+    height: 800px;
+}
